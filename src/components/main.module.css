@@ -1,0 +1,52 @@
+.mainWrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.wordDiv {
+    padding: 20px;
+    margin-bottom: 12px;
+    border-radius: 17px;
+    border:2px solid rgb(0, 153, 255);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    background-color: rgb(255, 255, 255);
+    justify-content: left;
+    display: flex;
+}
+
+.inLine{
+    justify-content: space-between;
+    display: flex;
+
+}
+
+.wordDiv:hover{
+    box-shadow: 0 8px 16px rgba(0, 39, 111, 0.1);
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.word{
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.topic{
+    font-size: 14px;
+    opacity: 0.5;
+}
+
+.bookmark{
+    background-color: rgb(33, 33, 33);
+    color: white;
+    padding: 0px 15px;
+    border-radius: 10px;
+    margin-left:auto;
+}
+
+.bookmark:hover{
+    background-color: rgb(93, 93, 93);
+}
