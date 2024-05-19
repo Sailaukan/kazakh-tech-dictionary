@@ -14,7 +14,7 @@ function Header() {
           Сөздік
         </NavLink>
         <NavLink 
-          to="/resume"
+          to="/profile"
           className={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink}
         >
           Профиль
