@@ -44,3 +44,28 @@
     transform: scale(1.02);
     cursor: pointer;
 }
+
+.textarea{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(235, 235, 235);
+    resize: none;
+}
+
+.saveButton{
+    padding: 5px;
+    color: white;
+    width: 100%;
+    border: 2px solid rgb(0, 153, 255);
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(0, 153, 255);
+}
+
+.saveButton:hover {
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 153, 255);
+    color: black;
+}

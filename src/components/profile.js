@@ -9,6 +9,7 @@ const Profile = () => {
     const [success, setSuccess] = useState("");
     const [profile, setProfile] = useState(null);
     const [isSignUp, setIsSignUp] = useState(false);
+    const [isSignIn, setIsSignIn] = useState(false);
 
     useEffect(() => {
         const getProfile = async () => {
