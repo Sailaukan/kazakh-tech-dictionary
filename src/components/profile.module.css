@@ -6,13 +6,6 @@
     margin: auto;
 }
 
-.content {
-    padding: 25px;
-    margin-bottom: 20px;
-    border-radius: 17px;
-    border: 2px solid rgb(0, 153, 255);
-    background-color: rgb(255, 255, 255);
-}
 
 input {
     display: block;
@@ -24,7 +17,7 @@ input {
 }
 
 .add{
-    padding: 10px 12px;
+    padding: 5px 12px;
     color: grey;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 10px;
@@ -33,7 +26,7 @@ input {
 }
 
 .submit{
-    padding: 10px 20px;
+    padding: 5px 20px;
     color: white;
     border: 2px solid rgb(0, 153, 255);
     border-radius: 10px;
@@ -54,4 +47,12 @@ input {
 .title{
     font-weight: 700;
     font-size: 27px;
+}
+
+.content {
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 17px;
+    border: 2px solid rgb(0, 153, 255);
+    background-color: rgb(255, 255, 255);
 }
