@@ -4,7 +4,6 @@ import classes from "./main.module.css"
 import { useNavigate } from 'react-router-dom';
 
 
-
 const Main = () => {
     const [words, setWords] = useState([]);
     const navigate = useNavigate();

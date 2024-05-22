@@ -13,24 +13,14 @@ const Profile = () => {
     useEffect(() => {
         supabase.auth.getSession().then(({ data: { session } }) => {
             setSession(session)
-            if(session){
-                localStorage.setItem('signedIn',JSON.stringify(true))
-            }
-            else{
-                localStorage.setItem('signedIn',JSON.stringify(false))
-            }
+            localStorage.setItem('signedIn', JSON.stringify(session))
         })
 
         const {
             data: { subscription },
         } = supabase.auth.onAuthStateChange((_event, session) => {
             setSession(session)
-            if(session){
-                localStorage.setItem('signedIn',JSON.stringify(true))
-            }
-            else{
-                localStorage.setItem('signedIn',JSON.stringify(false))
-            }
+            localStorage.setItem('signedIn', JSON.stringify(session))
         })
 
         return () => subscription.unsubscribe()
@@ -61,7 +51,7 @@ const Profile = () => {
                                 container: {
                                     margin: '0px',
                                     fontFamily: 'Helvetica, Arial, sans-serif',
-                                    fontSize:'20px'
+                                    fontSize: '20px'
                                 },
                                 anchor: {
                                     color: '#777777',
