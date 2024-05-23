@@ -11,7 +11,7 @@ const Main = () => {
     const handlePage = (newWord) => {
         const lowerCaseWord = String(newWord).toLowerCase();
         navigate(`/${lowerCaseWord}`);
-        console.log("LOWER"+lowerCaseWord);
+        console.log("LOWER" + lowerCaseWord);
     };
 
     useEffect(() => {
@@ -19,7 +19,9 @@ const Main = () => {
     }, []);
 
     async function getWords() {
-        const { data } = await supabase.from("words").select();
+        const { data } = await supabase
+            .from("words")
+            .select();
         setWords(data);
     }
 
