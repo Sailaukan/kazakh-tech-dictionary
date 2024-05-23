@@ -151,7 +151,7 @@ const WordPage = (props) => {
     return (
         <div className={classes.mainWrapper}>
             <div className={classes.title}>{props.word}</div>
-            <div className="font-light text-center mb-4">Орысша</div>
+            <div className="font-light text-center mb-4">{props.language}</div>
             <div className={classes.content}>
                 <div className="font-light opacity-60">Аудармалар</div>
                 <div className={classes.translation}>

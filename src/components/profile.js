@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import supabase from '../client';
 import classes from './profile.module.css';
+import { useNavigate } from 'react-router-dom';
 
 
 import { Auth } from '@supabase/auth-ui-react'
@@ -8,7 +9,28 @@ import { Auth } from '@supabase/auth-ui-react'
 const Profile = () => {
 
     const [session, setSession] = useState(null)
+    const [words, setWords] = useState([]);
+    const navigate = useNavigate();
 
+    const handlePage = (newWord2) => {
+        const lowerCaseWord = String(newWord2).toLowerCase();
+        navigate(`/${lowerCaseWord}`);
+        console.log("LOWER: " + lowerCaseWord);
+    };
+
+    useEffect(() => {
+        if (session) {
+            getWords(session.user.id);
+        }
+    }, [session]);
+
+    async function getWords(userId) {
+        const { data } = await supabase
+            .from('words')
+            .select()
+            .eq('userID', userId);
+        setWords(data);
+    }
 
     useEffect(() => {
         supabase.auth.getSession().then(({ data: { session } }) => {
@@ -140,12 +162,32 @@ const Profile = () => {
         return (
             <div className={classes.mainWrapper}>
                 <div className={classes.content}>
-                    Aboba<br />
+                    <div>
+                        Сіз ұсынған сөздер
+                    </div>
+
+                    {words.map((word) => (
+                        <div
+                            className={classes.wordDiv}
+                            key={word.word}
+                            onClick={() => handlePage(word.word)}>
+                            <div className={classes.inline}>
+                                <div className={classes.word}>
+                                    <div >{word.word}</div>
+                                </div>
+                                <div className={classes.topic}>
+                                    {word.topic}
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+
+                    <br />
+                    
                     <button
                         className={classes.submit}
-                        onClick={() => supabase.auth.signOut()}
-                    >
-                        Шығу
+                        onClick={() => supabase.auth.signOut()}>
+                        Аккаунттан шығу
                     </button>
                 </div>
             </div>

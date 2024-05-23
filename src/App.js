@@ -20,7 +20,7 @@ function App() {
   }, [trigger]);
 
   async function getWords() {
-    const { data } = await supabase.from('words').select('word');
+    const { data } = await supabase.from('words').select('word, language');
     setWords(data);
   }
 
@@ -33,7 +33,7 @@ function App() {
             <Route path="/" element={<Main refreshWords={refreshWords}/>} />
             <Route path="/profile" element={<Profile />} />
             {words.map((word) => (
-              <Route key={word.word} path={`/${word.word}`} element={<WordPage word={word.word}/>} />
+              <Route key={word.word} path={`/${word.word}`} element={<WordPage word={word.word} language={word.language}/>} />
             ))}
           </Routes>
         </div>
