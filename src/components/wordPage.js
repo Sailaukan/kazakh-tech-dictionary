@@ -28,7 +28,7 @@ const WordPage = (props) => {
         const { data: { session } } = await supabase.auth.getSession();
         if (session) {
             setUserID(session.user.id);
-            getLikedTranslations(session.user.id); // Fetch liked translations immediately after getting session
+            getLikedTranslations(session.user.id);
         }
     };
 
@@ -46,7 +46,7 @@ const WordPage = (props) => {
             setTranslations(data);
         }
     }
-
+ 
     const handleRequestTranslation = () => {
         setShowTextarea(true);
     }
@@ -66,7 +66,7 @@ const WordPage = (props) => {
     }
 
     const validateTranslation = (translation) => {
-        const regex = /^[А-Яа-яӘәӨөҰұҮүҚқҒғҢңІі\s]+$/; // regex to match only Cyrillic letters and spaces
+        const regex = /^[А-Яа-яӘәӨөҰұҮүҚқҒғҢңІі\s]+$/;
         if (!regex.test(translation)) {
             setErrorMessage('Аударма тек қана кириллица әріптерінен тұруы керек және ешқандай сан немесе арнайы таңбалар болмауы керек.');
             return false;
@@ -120,7 +120,7 @@ const WordPage = (props) => {
 
         setLikeTrigger(prev => prev + 1);
 
-        await getLikedTranslations(userID); // Fetch liked translations after liking a translation
+        await getLikedTranslations(userID);
     }
 
     const debouncedHandleLike = debounce(handleLike, 250);
@@ -130,7 +130,7 @@ const WordPage = (props) => {
 
     useEffect(() => {
         if (userID) {
-            getLikedTranslations(userID); // Ensure liked translations are fetched when userID is set
+            getLikedTranslations(userID);
         }
     }, [likeTrigger]);
 

@@ -1,47 +1,47 @@
 .header {
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%; 
-    z-index: 1000;
-  }
-  
-  .navigation {
-    padding: 0;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    font-size: 18px;
-  }
-  
-  .navLinkActive {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    background-color: rgba(255, 255, 255, 1);
-    padding: 10px;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-weight: bold;
-  }
-  
-  .navLink {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    padding: 7px 10px;
-    background-color: rgba(255, 255, 255, 0.558);
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-weight: bold;
-  }
-  
-  .navLink:hover {
-    opacity: 0.4;
-  }
-  
-  body {
-    margin-top: 60px;
-  }
-  
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(186, 222, 255, 0.785);
+}
+
+.navigation {
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 18px;
+}
+
+.navLinkActive {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 1);
+  padding: 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.navLink {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 7px 10px;
+  background-color: rgba(255, 255, 255, 0.558);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.navLink:hover {
+  opacity: 0.4;
+}
+
+body {
+  margin-top: 60px;
+}

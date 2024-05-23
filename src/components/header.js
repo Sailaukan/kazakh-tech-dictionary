@@ -6,14 +6,14 @@ function Header() {
   return (
     <header className={styles.header}>
       <nav className={styles.navigation}>
-        <NavLink 
-          to="/" 
-          exact 
+        <NavLink
+          to="/"
+          exact
           className={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink}
         >
           Сөздік
         </NavLink>
-        <NavLink 
+        <NavLink
           to="/profile"
           className={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink}
         >

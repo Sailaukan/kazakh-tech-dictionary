@@ -10,43 +10,90 @@
     padding: 20px;
     margin-bottom: 12px;
     border-radius: 17px;
-    border:2px solid rgb(0, 153, 255);
+    border: 2px solid rgb(0, 153, 255);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
     background-color: rgb(255, 255, 255);
     justify-content: left;
     display: flex;
 }
 
-.inLine{
+.inLine {
     justify-content: space-between;
     display: flex;
 
 }
 
-.wordDiv:hover{
+.wordDiv:hover {
     box-shadow: 0 8px 16px rgba(0, 39, 111, 0.1);
     transform: scale(1.01);
     cursor: pointer;
 }
 
-.word{
+.word {
     font-size: 20px;
     font-weight: 800;
 }
 
-.topic{
+.topic {
     font-size: 14px;
     opacity: 0.5;
 }
 
-.bookmark{
+.bookmark {
     background-color: rgb(33, 33, 33);
     color: white;
     padding: 0px 15px;
     border-radius: 10px;
-    margin-left:auto;
+    margin-left: auto;
 }
 
-.bookmark:hover{
+.bookmark:hover {
     background-color: rgb(93, 93, 93);
+}
+
+.textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(235, 235, 235);
+    resize: none;
+}
+
+.saveButton {
+    padding: 5px;
+    color: white;
+    width: 100%;
+    border: 2px solid rgb(0, 153, 255);
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(0, 153, 255);
+}
+
+.saveButton:hover {
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 153, 255);
+    color: black;
+}
+
+.addWord {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 12px;
+    border-radius: 17px;
+    border: 2px solid rgb(0, 153, 255);
+}
+
+.topicButton{
+    background-color: rgb(145, 187, 255);
+    padding: 5px 10px;
+    margin-right: 5px;
+    color:#ffffff;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.topicButton:hover{
+    background-color: rgb(0, 153, 255);
+    cursor: pointer;
+    color: white;
 }

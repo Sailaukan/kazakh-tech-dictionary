@@ -6,15 +6,15 @@
     margin: auto;
 }
 
-.content{
+.content {
     padding: 25px;
     margin-bottom: 20px;
     border-radius: 17px;
-    border:2px solid rgb(0, 153, 255);
+    border: 2px solid rgb(0, 153, 255);
     background-color: rgb(255, 255, 255);
 }
 
-.title{
+.title {
     margin-top: 20px;
     font-size: 40px;
     font-weight: 700;
@@ -25,13 +25,13 @@
     padding: 15px 20px;
     margin-top: 12px;
     border-radius: 10px;
-    border:1px solid rgb(189, 189, 189);
+    border: 1px solid rgb(189, 189, 189);
     background-color: rgb(255, 255, 255);
     justify-content: space-between;
     display: flex;
 }
 
-.add{
+.add {
     padding: 8px;
     margin-top: 12px;
     border-radius: 10px;
@@ -40,12 +40,12 @@
     transition: transform 0.3s ease;
 }
 
-.add:hover{
+.add:hover {
     transform: scale(1.02);
     cursor: pointer;
 }
 
-.textarea{
+.textarea {
     width: 100%;
     margin-top: 10px;
     padding: 10px;
@@ -54,7 +54,7 @@
     resize: none;
 }
 
-.saveButton{
+.saveButton {
     padding: 5px;
     color: white;
     width: 100%;
