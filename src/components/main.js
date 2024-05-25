@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from "react";
 import supabase from "../client";
-import classes from "./main.module.css"
+import classes from "./main.module.css";
 import { useNavigate } from 'react-router-dom';
-
+import SearchBar from './SearchBar';
 
 const Main = ({ refreshWords }) => {
     const [words, setWords] = useState([]);
+    const [filteredWords, setFilteredWords] = useState([]);
     const navigate = useNavigate();
     const [signedIn, setSignedIn] = useState(false);
     const [userID, setUserID] = useState(null);
     const [newWord, setNewWord] = useState(null);
-    const [newWordTopic, setNewWordTopic] = useState(null)
-    const [trigger, setTrigger] = useState(0);
+    const [newWordTopic, setNewWordTopic] = useState(null);
     const [showTextarea, setShowTextarea] = useState(false);
-    const [newWordLanguage, setNewWordLanguage] = useState(null)
-
-
+    const [newWordLanguage, setNewWordLanguage] = useState(null);
 
     const topics = [
         "Зымыран құрастыру",
@@ -30,7 +28,6 @@ const Main = ({ refreshWords }) => {
         "Орыс тілі",
         "Ағылшын тілі",
     ];
-
 
     useEffect(() => {
         const data = localStorage.getItem('signedIn');
@@ -65,8 +62,8 @@ const Main = ({ refreshWords }) => {
             .from("words")
             .select();
         setWords(data);
+        setFilteredWords(data);
     }
-
 
     const handleWordChange = (event) => {
         setNewWord(event.target.value);
@@ -91,24 +88,27 @@ const Main = ({ refreshWords }) => {
         } else {
             console.log('Inserted data:', data);
         }
-        setTrigger(prev => prev + 1);
     }
-
 
     const handleRequestWord = () => {
         setShowTextarea(true);
     }
 
+    const handleSearch = (searchTerm) => {
+        const filtered = words.filter((word) =>
+            word.word.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            word.topic.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setFilteredWords(filtered);
+    };
 
     return (
         <div className={classes.mainWrapper}>
-
             {signedIn ? (
                 <>
                     {showTextarea ? (
                         <div>
                             <div className={classes.addWord}>
-
                                 <div className={classes.topicMap}>
                                     <p className="mb-2">
                                         Тіл
@@ -126,7 +126,7 @@ const Main = ({ refreshWords }) => {
                                         Тақырып
                                     </p>
                                     {topics.map((topic, index) => (
-                                        <button
+                                         <button
                                             key={index}
                                             className={`${classes.topicButton} ${newWordTopic === topic ? classes.selectedTopicButton : ''}`}
                                             onClick={() => setNewWordTopic(topic)}
@@ -166,10 +166,9 @@ const Main = ({ refreshWords }) => {
                     Өз сөзіңізді немесе аудармаларды ұсыну үшін тіркелуіңіз қажет
                 </div>
             )}
-
-
+            <SearchBar onSearch={handleSearch} />
             <div>
-                {words.map((word) => (
+                {filteredWords.map((word) => (
                     <div
                         className={classes.wordDiv}
                         key={word.word}
@@ -185,8 +184,6 @@ const Main = ({ refreshWords }) => {
                     </div>
                 ))}
             </div>
-
-
         </div>
     )
 }
