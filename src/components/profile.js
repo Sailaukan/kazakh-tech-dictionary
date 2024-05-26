@@ -162,28 +162,31 @@ const Profile = () => {
         return (
             <div className={classes.mainWrapper}>
                 <div className={classes.content}>
-                    <div>
-                        Сіз ұсынған сөздер
-                    </div>
-
-                    {words.map((word) => (
-                        <div
-                            className={classes.wordDiv}
-                            key={word.word}
-                            onClick={() => handlePage(word.word)}>
-                            <div className={classes.inline}>
-                                <div className={classes.word}>
-                                    <div >{word.word}</div>
-                                </div>
-                                <div className={classes.topic}>
-                                    {word.topic}
+                    <div>Сіз ұсынған сөздер</div>
+                    {words.length > 0 ? (
+                        words.map((word) => (
+                            <div
+                                className={classes.wordDiv}
+                                key={word.word}
+                                onClick={() => handlePage(word.word)}
+                            >
+                                <div className={classes.inline}>
+                                    <div className={classes.word}>
+                                        <div>{word.word}</div>
+                                    </div>
+                                    <div className={classes.topic}>
+                                        {word.topic}
+                                    </div>
                                 </div>
                             </div>
+                        ))
+                    ) : (
+                        <div className={classes.wordDiv}>
+                            <div className="opacity-40">Сіз әлі еш сөзді ұсынған жоқсыз </div>
                         </div>
-                    ))}
-
+                    )}
                     <br />
-                    
+
                     <button
                         className={classes.submit}
                         onClick={() => supabase.auth.signOut()}>
