@@ -37,6 +37,9 @@ function App() {
             ))}
           </Routes>
         </div>
+        <center className='opacity-30 mb-10 mt-3'>
+          Developed by Sailaukan
+        </center>
       </div>
     </Router>
   );
